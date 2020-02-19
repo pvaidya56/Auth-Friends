@@ -9,7 +9,9 @@ const Friends = () => {
     const [friendToEdit, setFriendToEdit] = useState({})
     useEffect(() => { 
         axiosWithAuth().get('/friends')
-            .then(res => setFriends(res.data))
+            .then(res => {
+                console.log(res.data)
+                setFriends(res.data)})
             .catch(err => console.log(err))
     }, [])
 
